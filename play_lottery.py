@@ -8,7 +8,13 @@ lotto.winning_numbers = lotto.draw_numbers()
 my_ticket = lotto.draw_numbers()
 count = 1
 
-#Define maximum number of tickets to buy
+# Introduce rules for lotto jackpot
+print(f"To win the jackpot you need to match {lotto.numbers_to_match} numbers ranging from {lotto.numbers_range[0]} to {lotto.numbers_range[-1]}")
+if lotto.bonus_to_match:
+    print(f"You also need to match {lotto.bonus_to_match} bonus number(s) ranging from {lotto.bonus_range[0]} to {lotto.bonus_range[-1]}\n")
+
+
+# Define maximum number of tickets to buy
 max_tickets = input("How many tickets would you like to buy?\n")
 while max_tickets.isdigit() == False:
     max_tickets = input("Sorry, that is not a number!\nHow many tickets would you like to buy?\n")
